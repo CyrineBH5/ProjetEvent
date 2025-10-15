@@ -1,0 +1,31 @@
+<div class="mt-5">
+  <h3 class="mb-4">🏆 Top 3 des événements les plus aimés</h3>
+
+  <div class="row g-3">
+    <div class="col-md-4" *ngFor="let best of bestEvents; let i = index">
+      <div class="card border-warning h-100 shadow">
+        <div class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
+          <span>#{{ i + 1 }}</span>
+          <span> {{ best.nbrLike }} likes</span>
+        </div>
+        <img src="{{best.imageUrl}}"
+             [alt]="best.title"
+             class="card-img-top"
+             style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{ best.title }}</h5>
+          <p class="text-muted">{{ best.location }} • {{ best.date | date }}</p>
+          <p>{{ best.description }}</p>
+          <p class="fw-bold">{{ best.price }}</p>
+          <a [routerLink]="['../detail', best.id]" class="btn btn-warning w-100">
+            Voir détails
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="bestEvents.length === 0" class="alert alert-info text-center">
+    <p class="mb-0">Aucun événement liké pour le moment. Commencez à liker vos événements préférés ! ❤️</p>
+  </div>
+</div>

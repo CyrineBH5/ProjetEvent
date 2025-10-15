@@ -1,22 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/events">Event <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/product">product</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand fw-bold fs-3" href="#">
+      <span style="font-size: 1.5rem;">🎉</span> Events Hub
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white fw-semibold px-3" routerLink="/events" routerLinkActive="active" style="transition: all 0.3s ease;">
+            <span style="font-size: 1.1rem;">🎪</span> Events
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-semibold px-3" routerLink="/product" routerLinkActive="active" style="transition: all 0.3s ease;">
+            <span style="font-size: 1.1rem;">📦</span> Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-semibold px-3" href="#" style="transition: all 0.3s ease;">
+            <span style="font-size: 1.1rem;">💰</span> Pricing
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white-50 px-3" href="#" style="cursor: not-allowed;">
+            <span style="font-size: 1.1rem;">🚫</span> Disabled
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

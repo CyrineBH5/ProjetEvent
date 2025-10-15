@@ -1,0 +1,18 @@
+<div class="card shadow-sm h-100 border-0">
+  <img [src]="event.imageUrl" class="card-img-top mb-3" alt="{{ event.title }}" height="200" />
+  <div class="card-body text-center">
+    <h5 class="card-title text-primary">{{ event.title }}</h5>
+    <p class="card-text">
+      📍 {{ event.location }} <br />
+      📅 {{ event.date | date:'longDate' }} <br />
+      🎟 Places dispo : {{ event.nbPlaces }}
+    </p>
+    <button class="btn btn-primary me-2"
+            [disabled]="event.nbPlaces === 0"
+            (click)="likeEvent()">👍 Like</button>
+    {{ event.nbrLike }}
+    <button class="btn btn-success">
+      <a [routerLink]="['/events/details', event.id]" class="text-white text-decoration-none">Details</a>
+    </button>
+  </div>
+</div>

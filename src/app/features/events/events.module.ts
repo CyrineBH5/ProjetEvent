@@ -5,17 +5,21 @@ import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { DetailEventComponent } from './detail-event/detail-event.component';
+import { TopEventComponent } from './top-event/top-event.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     EventsComponent,
     ListEventComponent,
-    DetailEventComponent
+    DetailEventComponent,
+    TopEventComponent
   ],
   imports: [
     CommonModule,
-    EventsRoutingModule
+    EventsRoutingModule,
+    FormsModule,
   ]
 })
 export class EventsModule { }
