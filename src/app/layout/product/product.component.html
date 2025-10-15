@@ -1,0 +1,16 @@
+
+<h1>   CHoisissez un type de produit</h1>
+<select  [(ngModel)]="selectedProductType">
+
+
+  <option value="telephone">Téléphone</option>
+  <option value="tv">TV</option>
+
+</select>
+
+
+<div>
+   <app-telephone  *ngIf="selectedProductType === 'telephone'"></app-telephone>
+    <app-tv  *ngIf="selectedProductType === 'tv'"></app-tv>
+
+</div>
