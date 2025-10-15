@@ -10,10 +10,11 @@ export class CardEventComponent implements OnInit {
    ngOnInit(): void {
   }
   @Input() event: any;
-  @Output() liked = new EventEmitter<any>();
+  @Output() onLiked = new EventEmitter<any>();
 
   likeEvent() {
     this.event.nbrLike++;
-    this.liked.emit(this.event);
+    this.onLiked.emit(this.event);
   }
+  
 }

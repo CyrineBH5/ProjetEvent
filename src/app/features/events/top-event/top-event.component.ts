@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './top-event.component.css'
 })
 export class TopEventComponent {
-  @Input() bestEvents: any[] = [];
-
+@Input() topEvents: any[] = [];
 }
