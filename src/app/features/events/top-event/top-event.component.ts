@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-top-event',
@@ -7,4 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class TopEventComponent {
 @Input() topEvents: any[] = [];
+@Input() event: any;
+
+  @Output() onLike = new EventEmitter<any>();
+
+  likeEvent() {
+    this.event.nbrLike++;
+    this.onLike.emit(this.event);
+  }
 }
