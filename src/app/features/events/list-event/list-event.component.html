@@ -1,10 +1,7 @@
 <div class="container py-5">
   <!-- En-tête avec recherche -->
   <div class="text-center mb-5">
-    <h1 class="display-4 fw-bold mb-3" style="color: #667eea;">
-      Découvrez nos Événements
-    </h1>
-    <p class="lead text-muted mb-4">Trouvez l'expérience parfaite pour vous</p>
+   
 
     <div class="row justify-content-center">
       <div class="col-lg-6">
@@ -34,8 +31,6 @@
   <div *ngIf="showBest" class="mb-5">
     <app-top-event [topEvents]="topEvents"></app-top-event>
   </div>
-
-  <!-- Message si aucun résultat -->
   <div *ngIf="getFilteredEvents().length === 0" class="text-center py-5">
     <div style="font-size: 4rem; opacity: 0.3;">🔍</div>
     <h3 class="text-muted mt-3">Aucun événement trouvé</h3>

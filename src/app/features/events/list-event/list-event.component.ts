@@ -21,20 +21,14 @@ export class ListEventComponent implements OnInit {
     this.updateTopEvents();
   }
 
-  // Méthode appelée quand on clique sur le bouton Like
   likeEvent(event: Eventy): void {
-    // Incrémenter le nombre de likes
     event.nbrLike++;
 
-    // Vérifier si l'événement est déjà dans likedEvents
     const exists = this.likedEvents.find(e => e.id === event.id);
-
-    // Si pas encore dans likedEvents, on l'ajoute
     if (!exists) {
       this.likedEvents.push(event);
     }
 
-    // Mettre à jour la liste des meilleurs événements
     this.updateTopEvents();
   }
 
@@ -51,7 +45,6 @@ export class ListEventComponent implements OnInit {
     );
   }
 
-  // Toggle pour afficher/masquer la section Best Events
   clickTopEvent(): void {
     this.showBest = !this.showBest;
   }
