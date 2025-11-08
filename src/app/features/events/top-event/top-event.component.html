@@ -1,9 +1,11 @@
 <div class="mt-5">
   <h3 class="mb-4">🏆 Top 3 des événements les plus aimés</h3>
   <div class="row g-3">
-    <div class="col-md-4" *ngFor="let best of topEvents; let i = index">
+    <div class="col-md-4" *ngFor="let best of topEvents | orderByLikes; let i = index">
       <app-card-event
-        [event]="best" >
+        [event]="best"
+        [showLikeButton]="false">
+ >
       </app-card-event>
     </div>
   </div>

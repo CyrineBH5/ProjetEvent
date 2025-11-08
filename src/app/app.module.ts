@@ -8,13 +8,13 @@ import { HomeComponent } from './layout/home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProductComponent } from './layout/product/product.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePersPipe } from './shared/pipes/date-pers.pipe';
 import { TestDirective } from './shared/Directives/test.directive';
 import { TelephoneComponent } from './layout/telephone/telephone.component';
 import { TvComponent } from './layout/tv/tv.component';
 import { CardProductComponent } from './layout/card-product/card-product.component';
-import { CardEventComponent } from './features/events/card-event/card-event.component';
+import { ReactiveFormComponent } from './layout/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +29,17 @@ import { CardEventComponent } from './features/events/card-event/card-event.comp
     TelephoneComponent,
     TvComponent,
     CardProductComponent,
-    
+    ReactiveFormComponent,
+
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <div class="container py-5">
   <!-- En-tête avec recherche -->
   <div class="text-center mb-5">
-   
+
 
     <div class="row justify-content-center">
       <div class="col-lg-6">
@@ -42,7 +42,9 @@
   <div class="col-lg-4 col-md-6" *ngFor="let e of getFilteredEvents()">
     <app-card-event
       [event]="e"
-      (onLike)="likeEvent(e)">
+      (onLike)="likeEvent(e)"
+      [showLikeButton]="true">
+>
     </app-card-event>
   </div>
 </div>

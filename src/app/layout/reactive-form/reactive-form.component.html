@@ -1,0 +1,54 @@
+<p>reactive-form works!</p>
+
+<form [formGroup]="formLogin">
+  <h2>Connexion</h2>
+
+  <!-- Champ Login -->
+  <div>
+    <label for="login">Nom d'utilisateur :</label><br>
+    <input
+      type="text"
+      id="login"
+      formControlName="lg"
+      name="login"
+      placeholder="Entrez votre login"
+
+    />
+    <div *ngIf="formLogin.controls['lg'].invalid && formLogin.controls['lg'].touched" style="color: red; font-size: 0.9em;">
+      Le nom d'utilisateur est requis (min 4 caractères).
+    </div>
+  </div>
+
+  <!-- Champ Password -->
+  <div style="margin-top: 10px;">
+    <label for="password">Mot de passe :</label><br>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      name="password"
+      placeholder="Entrez votre mot de passe"
+
+    />
+    <div *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].touched" style="color: red; font-size: 0.9em;">
+      Le mot de passe est requis.
+    </div>
+  </div>
+
+  <!-- Champ Email -->
+  <div style="margin-top: 8px;">
+    <label for="email">Email :</label><br>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      name="email"
+      placeholder="Entrez votre email"
+
+    />
+    <div *ngIf="formLogin.controls['email'].invalid && formLogin.controls['email'].touched" style="color: red; font-size: 0.9em">
+<button type="submit" style="margin-top: 15px;" [disabled]="formLogin.invalid">
+    Se connecter
+  </button>
+  </div>
+  </div> </form>

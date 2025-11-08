@@ -8,6 +8,7 @@ import { DetailEventComponent } from './detail-event/detail-event.component';
 import { TopEventComponent } from './top-event/top-event.component';
 import { FormsModule } from '@angular/forms';
 import { CardEventComponent } from './card-event/card-event.component';
+import { OrderByLikesPipe } from '../../shared/pipes/order-by-likes.pipe';
 
 
 @NgModule({
@@ -16,13 +17,17 @@ import { CardEventComponent } from './card-event/card-event.component';
     ListEventComponent,
     DetailEventComponent,
     TopEventComponent,
-    CardEventComponent
+    CardEventComponent,
+    OrderByLikesPipe
 
   ],
   imports: [
     CommonModule,
     EventsRoutingModule,
     FormsModule,
+  ],
+  exports:[
+
   ]
 })
 export class EventsModule { }

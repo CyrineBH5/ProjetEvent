@@ -19,8 +19,56 @@ export class EventsService {
         nbPlaces: 25,
         nbrLike: 0
       },
+     
       {
         id: 2,
+        title: 'Web Dev Days',
+        description: 'Journée dédiée aux frameworks web modernes.',
+        date: new Date('2025-01-05'),
+        location: 'Ariana',
+        price: 30,
+        organizerId: 102,
+        imageUrl: 'https://cdn.dribbble.com/userupload/37287941/file/original-a59d13499667b765fb5aceb8b5d5bf0d.jpg',
+        nbPlaces: 0,
+        nbrLike: 3
+      },{
+        id: 3,
+        title: 'Web Dev Days',
+        description: 'Journée dédiée aux frameworks web modernes.',
+        date: new Date('2025-01-05'),
+        location: 'Ariana',
+        price: 30,
+        organizerId: 102,
+        imageUrl: 'https://cdn.dribbble.com/userupload/37287941/file/original-a59d13499667b765fb5aceb8b5d5bf0d.jpg',
+        nbPlaces: 0,
+        nbrLike: 3
+      },
+      {
+        id: 4,
+        title: 'Web Dev Days',
+        description: 'Journée dédiée aux frameworks web modernes.',
+        date: new Date('2025-01-05'),
+        location: 'Ariana',
+        price: 30,
+        organizerId: 102,
+        imageUrl: 'https://cdn.dribbble.com/userupload/37287941/file/original-a59d13499667b765fb5aceb8b5d5bf0d.jpg',
+        nbPlaces: 0,
+        nbrLike: 3
+      },
+       {
+        id: 5,
+        title: 'Web Dev Days',
+        description: 'Journée dédiée aux frameworks web modernes.',
+        date: new Date('2025-01-05'),
+        location: 'Ariana',
+        price: 30,
+        organizerId: 102,
+        imageUrl: 'https://cdn.dribbble.com/userupload/37287941/file/original-a59d13499667b765fb5aceb8b5d5bf0d.jpg',
+        nbPlaces: 0,
+        nbrLike: 3
+      },
+       {
+        id: 6,
         title: 'Web Dev Days',
         description: 'Journée dédiée aux frameworks web modernes.',
         date: new Date('2025-01-05'),
