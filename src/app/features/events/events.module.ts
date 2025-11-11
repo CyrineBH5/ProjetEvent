@@ -6,9 +6,10 @@ import { EventsComponent } from './events.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { DetailEventComponent } from './detail-event/detail-event.component';
 import { TopEventComponent } from './top-event/top-event.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardEventComponent } from './card-event/card-event.component';
 import { OrderByLikesPipe } from '../../shared/pipes/order-by-likes.pipe';
+import { AddEventComponent } from './add-event/add-event.component';
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import { OrderByLikesPipe } from '../../shared/pipes/order-by-likes.pipe';
     DetailEventComponent,
     TopEventComponent,
     CardEventComponent,
-    OrderByLikesPipe
+    OrderByLikesPipe,
+    AddEventComponent,
 
   ],
   imports: [
     CommonModule,
     EventsRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
 

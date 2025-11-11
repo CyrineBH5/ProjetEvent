@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Form</title>
+</head>
+<body>
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <h2>Ajouter un événement</h2>
+
+  <label for="title">Titre</label>
+  <input type="text" id="title" formControlName="title" placeholder="Nom de l'événement" required>
+
+  <label for="description">Description</label>
+  <textarea id="description" formControlName="description" rows="4" placeholder="Description de l'événement" required></textarea>
+
+  <label for="date">Date</label>
+  <input type="date" id="date" formControlName="date" required>
+
+  <label for="location">Lieu</label>
+  <input type="text" id="location" formControlName="location" placeholder="Lieu de l'événement" required>
+
+  <label for="price">Prix</label>
+  <input type="number" id="price" formControlName="price" placeholder="Prix du ticket" min="0" required>
+
+  <label for="organizerId">ID de l'organisateur</label>
+  <input type="number" id="organizerId" formControlName="organizerId" placeholder="Identifiant de l'organisateur" min="1" required>
+
+  <label for="imageUrl">Image (URL)</label>
+  <input type="url" id="imageUrl" formControlName="imageUrl" placeholder="Lien vers l'image de l'événement" required>
+
+  <button type="submit">Ajouter l'événement</button>
+</form>
+
+</body>
+</html>
