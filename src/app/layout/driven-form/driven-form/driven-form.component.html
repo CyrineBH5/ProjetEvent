@@ -1,0 +1,17 @@
+<p>reactive-form works!</p>
+
+<form #myform="ngForm">
+  <h2>Driven Form</h2>
+    <input type="text" class="form-control" name="login" [(ngModel)]="id" #login="ngModel" minlength="6" ngModel/>
+
+  <div *ngIf="login.errors">
+    <p>login invalide</p>
+  </div>
+  <input type="password" class="form-control" name="password" ngModel/>
+  <input type="email" class="form-control" name="email" ngModel />
+
+
+<button (click)="save(myform)" style="margin-top: 15px;" [disabled]="myform.invalid">
+    Se connecter
+  </button>
+   </form>

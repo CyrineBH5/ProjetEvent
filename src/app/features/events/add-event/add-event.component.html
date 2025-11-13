@@ -9,28 +9,112 @@
 <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
   <h2>Ajouter un événement</h2>
 
-  <label for="title">Titre</label>
-  <input type="text" id="title" formControlName="title" placeholder="Nom de l'événement" required>
+  <!-- Champ Titre -->
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input type="text" id="title" formControlName="title" placeholder="Nom de l'événement" required>
 
-  <label for="description">Description</label>
-  <textarea id="description" formControlName="description" rows="4" placeholder="Description de l'événement" required></textarea>
+    <div *ngIf="eventForm.get('title')?.invalid && (eventForm.get('title')?.dirty || eventForm.get('title')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('title')?.errors?.['required']">
+        Le titre est obligatoire.
+      </div>
+      <div *ngIf="eventForm.get('title')?.errors?.['minlength']">
+        Le titre doit contenir au moins {{eventForm.get('title')?.errors?.['minlength']?.requiredLength}} caractères.
+      </div>
+      <div *ngIf="eventForm.get('title')?.errors?.['maxlength']">
+        Le titre ne peut pas dépasser {{eventForm.get('title')?.errors?.['maxlength']?.requiredLength}} caractères.
+      </div>
+    </div>
+  </div>
 
-  <label for="date">Date</label>
-  <input type="date" id="date" formControlName="date" required>
+  <!-- Champ Description -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" rows="4" placeholder="Description de l'événement" required></textarea>
 
-  <label for="location">Lieu</label>
-  <input type="text" id="location" formControlName="location" placeholder="Lieu de l'événement" required>
+    <div *ngIf="eventForm.get('description')?.invalid && (eventForm.get('description')?.dirty || eventForm.get('description')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('description')?.errors?.['required']">
+        La description est obligatoire.
+      </div>
+      <div *ngIf="eventForm.get('description')?.errors?.['minlength']">
+        La description doit contenir au moins {{eventForm.get('description')?.errors?.['minlength']?.requiredLength}} caractères.
+      </div>
+    </div>
+  </div>
 
-  <label for="price">Prix</label>
-  <input type="number" id="price" formControlName="price" placeholder="Prix du ticket" min="0" required>
+  <!-- Champ Date -->
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" id="date" formControlName="date" required>
 
-  <label for="organizerId">ID de l'organisateur</label>
-  <input type="number" id="organizerId" formControlName="organizerId" placeholder="Identifiant de l'organisateur" min="1" required>
+    <div *ngIf="eventForm.get('date')?.invalid && (eventForm.get('date')?.dirty || eventForm.get('date')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('date')?.errors?.['required']">
+        La date est obligatoire.
+      </div>
+      <div *ngIf="eventForm.get('date')?.errors?.['futureDate']">
+        La date doit être dans le futur.
+      </div>
+    </div>
+  </div>
 
-  <label for="imageUrl">Image (URL)</label>
-  <input type="url" id="imageUrl" formControlName="imageUrl" placeholder="Lien vers l'image de l'événement" required>
+  <!-- Champ Lieu -->
+  <div class="form-group">
+    <label for="location">Lieu</label>
+    <input type="text" id="location" formControlName="location" placeholder="Lieu de l'événement" required>
 
-  <button type="submit">Ajouter l'événement</button>
+    <div *ngIf="eventForm.get('location')?.invalid && (eventForm.get('location')?.dirty || eventForm.get('location')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('location')?.errors?.['required']">
+        Le lieu est obligatoire.
+      </div>
+    </div>
+  </div>
+
+  <!-- Champ Prix -->
+  <div class="form-group">
+    <label for="price">Prix</label>
+    <input type="number" id="price" formControlName="price" placeholder="Prix du ticket" min="0" required>
+
+    <div *ngIf="eventForm.get('price')?.invalid && (eventForm.get('price')?.dirty || eventForm.get('price')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('price')?.errors?.['required']">
+        Le prix est obligatoire.
+      </div>
+      <div *ngIf="eventForm.get('price')?.errors?.['min']">
+        Le prix ne peut pas être négatif.
+      </div>
+    </div>
+  </div>
+
+  <!-- Champ ID Organisateur -->
+  <div class="form-group">
+    <label for="organizerId">ID de l'organisateur</label>
+    <input type="number" id="organizerId" formControlName="organizerId" placeholder="Identifiant de l'organisateur" min="1" required>
+
+    <div *ngIf="eventForm.get('organizerId')?.invalid && (eventForm.get('organizerId')?.dirty || eventForm.get('organizerId')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('organizerId')?.errors?.['required']">
+        L'ID de l'organisateur est obligatoire.
+      </div>
+      <div *ngIf="eventForm.get('organizerId')?.errors?.['min']">
+        L'ID de l'organisateur doit être supérieur à 0.
+      </div>
+    </div>
+  </div>
+
+  <!-- Champ Image URL -->
+  <div class="form-group">
+    <label for="imageUrl">Image (URL)</label>
+    <input type="url" id="imageUrl" formControlName="imageUrl" placeholder="Lien vers l'image de l'événement" required>
+
+    <div *ngIf="eventForm.get('imageUrl')?.invalid && (eventForm.get('imageUrl')?.dirty || eventForm.get('imageUrl')?.touched)" class="error-message">
+      <div *ngIf="eventForm.get('imageUrl')?.errors?.['required']">
+        L'URL de l'image est obligatoire.
+      </div>
+      <div *ngIf="eventForm.get('imageUrl')?.errors?.['url']">
+        Veuillez entrer une URL valide.
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="eventForm.invalid">Ajouter l'événement</button>
 </form>
 
 </body>

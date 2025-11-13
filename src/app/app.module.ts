@@ -15,6 +15,7 @@ import { TelephoneComponent } from './layout/telephone/telephone.component';
 import { TvComponent } from './layout/tv/tv.component';
 import { CardProductComponent } from './layout/card-product/card-product.component';
 import { ReactiveFormComponent } from './layout/reactive-form/reactive-form.component';
+import { DrivenFormComponent } from './layout/driven-form/driven-form/driven-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ReactiveFormComponent } from './layout/reactive-form/reactive-form.comp
     TvComponent,
     CardProductComponent,
     ReactiveFormComponent,
+    DrivenFormComponent,
 
 
 

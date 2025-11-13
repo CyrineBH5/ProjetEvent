@@ -1,0 +1,70 @@
+<p>reactive-form works!</p>
+
+<form #p="ngForm" (ngSubmit)="onSubmit()">
+  <h2>Participer</h2>
+
+  <!-- Champ Email -->
+  <div class="form-group">
+    <label for="AdresseMail">Adresse e-mail</label>
+    <input
+      type="email"
+      class="form-control"
+      id="AdresseMail"
+      name="AdresseMail"
+      #AdresseMail="ngModel"
+      required
+      email
+      ngModel
+    />
+
+    <div *ngIf="AdresseMail.invalid && (AdresseMail.dirty || AdresseMail.touched)" class="error-message">
+      <div *ngIf="AdresseMail.errors?.['required']">
+        <p>L'adresse email est obligatoire</p>
+      </div>
+      <div *ngIf="AdresseMail.errors?.['email']">
+        <p>Veuillez entrer une adresse email valide</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Champ Nombre de places -->
+  <div class="form-group">
+    <label for="nbrplaces">Nombre de places</label>
+    <input
+      type="number"
+      class="form-control"
+      id="nbrplaces"
+      name="nbrplaces"
+      #nbrplaces="ngModel"
+      required
+      min="1"
+      ngModel
+      placeholder="4"
+      (input)="calculateTotalPrice()"
+    />
+
+    <div *ngIf="nbrplaces.invalid && (nbrplaces.dirty || nbrplaces.touched)" class="error-message">
+      <div *ngIf="nbrplaces.errors?.['required']">
+        <p>Le nombre de places est obligatoire</p>
+      </div>
+      <div *ngIf="nbrplaces.errors?.['min']">
+        <p>Le nombre de places doit être au moins 1</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Affichage du prix total -->
+  <div class="price-section">
+    <strong>Prix total : {{ totalPrice }} €</strong>
+  </div>
+
+  <!-- Bouton de soumission -->
+  <button
+    type="submit"
+    style="margin-top: 15px;"
+    [disabled]="p.invalid"
+    (click)="save()"
+  >
+    Soumettre
+  </button>
+</form>

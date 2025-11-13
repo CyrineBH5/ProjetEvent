@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardEventComponent } from './card-event/card-event.component';
 import { OrderByLikesPipe } from '../../shared/pipes/order-by-likes.pipe';
 import { AddEventComponent } from './add-event/add-event.component';
+import { ParticiperComponent } from './participer/participer.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     CardEventComponent,
     OrderByLikesPipe,
     AddEventComponent,
+    ParticiperComponent,
 
   ],
   imports: [

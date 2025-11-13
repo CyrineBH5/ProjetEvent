@@ -17,7 +17,15 @@ eventForm = new FormGroup({
     imageUrl : new FormControl('', [Validators.required])
   });
 
-  onSubmit(){
-    
+onSubmit(): void {
+    if (this.eventForm.valid) {
+      console.log('Formulaire soumis:', this.eventForm.value);
+      // Traitement de la soumission du formulaire
+    } else {
+      // Marquer tous les champs comme touched pour afficher les erreurs
+      Object.keys(this.eventForm.controls).forEach(key => {
+        this.eventForm.get(key)?.markAsTouched();
+      });
+    }
   }
 }
