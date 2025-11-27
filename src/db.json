@@ -1,0 +1,73 @@
+{
+  "products":[
+    {"id": 1,
+     "name": "Tv A",
+     "price": 2000,
+     "description": "Description of TVA",
+     "quantity": 10,
+      "like": 0,
+      "image": "https://cdn.thewirecutter.com/wp-content/media/2024/12/BVEST-32-INCH-TVS-2048px-2870-3x2-1.jpg?auto=webp&quality=75&crop=3:2&width=1024"
+    },
+    {"id": 2,
+     "name": "Tv B",
+      "price": 3000,
+      "description": "Description of TVB",
+      "quantity": 15,
+      "like": 0,
+      "image": "https://cdn.thewirecutter.com/wp-content/media/202"
+    },
+    {"id": 3,
+     "name": "Tv C",
+      "price": 4000,
+      "description": "Description of TVC",
+      "quantity": 8,
+      "like": 0,
+      "image": "https://cdn.thewirecutter.com/wp-content/media/2024/12/BVEST-32-INCH-TVS-2048px-2870-3x2-1.jpg?auto=webp&quality=75&crop=3:2&width=1024"
+    },
+    {
+      "id": 4,
+      "name": "Tv D",
+        "price": 5000,
+        "description": "Description of TVD",
+        "quantity": 20,
+        "like": 0,
+        "image": "https://cdn.thewirecutter.com/wp-content/media/2024/12/BVEST-32-INCH-TVS-2048px-2870-3x2-1.jpg?auto=webp&quality=75&crop=3:2&width=1024"
+    },
+    {
+      "id": 5,
+      "name": "Tv E",
+        "price": 6000,
+        "description": "Description of TVE",
+        "quantity": 5,
+        "like": 0,
+        "image": "https://cdn.thewirecutter.com/wp-content/media/2024/12/BVEST-32-INCH-TVS-2048px-2870-3x2-1.jpg?auto=webp&quality=75&crop=3:2&width=1024"
+    }
+  ], "events":[
+    {
+        "id": 1,
+        "title": "Angular Summit",
+        "description": "Conférence sur Angular et l écosystème front-end.",
+        "date": "2025-11-10",
+        "location": "Tunis",
+        "price": 50,
+        "organizerId": 101,
+        "imageUrl": "https://m.media-amazon.com/images/I/71vC4ryHjOL._UF1000,1000_QL80_.jpg",
+        "nbPlaces": 25,
+        "nbrLike": 0
+      },
+      {
+        "id": 2,
+        "title": "React Rally",
+        "description": "Événement dédié à React et aux technologies associées.",
+        "date": "2025-12-05",
+        "location": "Sfax",
+        "price": 60,
+        "organizerId": 102,
+        "imageUrl": "https://miro.medium.com/v2/resize:fit:1400/1*YkXQF8KXJ3n1b0nU5Z6kZA.png",
+        "nbPlaces": 30,
+        "nbrLike": 0
+      }
+
+  ]
+
+}

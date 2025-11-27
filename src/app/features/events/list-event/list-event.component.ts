@@ -14,10 +14,16 @@ export class ListEventComponent implements OnInit {
   likedEvents: Eventy[] = [];
   topEvents: Eventy[] = [];
 
-  constructor(private eventS: EventsService) { }
+  constructor(private eventS: EventsService) {
+    this.eventS.getAllEvents().subscribe(data => {
+      this.events = data;
+      //this.updateTopEvents();
+    },
+      (error) => { console.log(error) });
+  }
 
   ngOnInit(): void {
-    this.events = this.eventS.events;
+    // this.events = this.eventS.events;
     this.updateTopEvents();
   }
 
@@ -56,4 +62,5 @@ export class ListEventComponent implements OnInit {
       .sort((a, b) => b.nbrLike - a.nbrLike)
       .slice(0, 3);
   }
+
 }

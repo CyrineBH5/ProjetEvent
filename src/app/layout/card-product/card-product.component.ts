@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../model/product';
+import { Router } from '@angular/router';
+import { ProductService } from '../../shared/service/product.service';
 
 @Component({
   selector: 'app-card-product',
@@ -8,7 +10,7 @@ import { Product } from '../../model/product';
 })
 export class CardProductComponent {
 
-
+constructor (private route: Router, private ps : ProductService){}
  @Input() p: Product;
 
  //1-  preparer la notification à envoyer aux parent

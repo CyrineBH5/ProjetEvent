@@ -9,7 +9,7 @@ import { ParticiperComponent } from './participer/participer.component';
 const routes: Routes = [{
   path: '', component: EventsComponent, children: [
     { path: '', component: ListEventComponent },
-    { path: 'detail/:id', component: DetailEventComponent },
+    { path: ':id', component: DetailEventComponent },
     { path: 'add-event', component: AddEventComponent },
     { path: 'participate/:id/:prix', component: ParticiperComponent },
 

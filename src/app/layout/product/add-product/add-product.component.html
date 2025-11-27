@@ -1,0 +1,15 @@
+<form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+
+  <input formControlName="name" placeholder="Nom du produit" />
+
+  <input formControlName="price" type="number" placeholder="Prix" />
+
+  <textarea formControlName="description" placeholder="Description"></textarea>
+
+  <input formControlName="quantity" type="number" placeholder="Quantité" />
+
+  <input formControlName="image" placeholder="Image URL" />
+
+  <button type="submit">Ajouter</button>
+
+</form>

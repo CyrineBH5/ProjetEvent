@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './layout/home/home.component';
 import { ProductComponent } from './layout/product/product.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
-import { ListEventComponent } from './features/events/list-event/list-event.component';
 import { ReactiveFormComponent } from './layout/reactive-form/reactive-form.component';
 import { DrivenFormComponent } from './layout/driven-form/driven-form/driven-form.component';
+import { DetailProductComponent } from './layout/product/detail-product/detail-product.component';
+import { AddProductComponent } from './layout/product/add-product/add-product.component';
 
 const routes: Routes = [
   // { path :'events',  component : ListEventComponent},
   { path: '', redirectTo: 'events', pathMatch: 'full' }, // default route
-  { path: 'product', component: ProductComponent },
+  { path: 'products', component: ProductComponent },
+  //{ path: 'products/:id', component: DetailProductComponent },
+  { path: 'products/add-product', component: AddProductComponent },
+  { path: 'products/:id', component: DetailProductComponent },
+
   { path: 'reactive', component: ReactiveFormComponent },
   { path: 'driven', component: DrivenFormComponent },
 

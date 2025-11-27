@@ -16,6 +16,9 @@ import { TvComponent } from './layout/tv/tv.component';
 import { CardProductComponent } from './layout/card-product/card-product.component';
 import { ReactiveFormComponent } from './layout/reactive-form/reactive-form.component';
 import { DrivenFormComponent } from './layout/driven-form/driven-form/driven-form.component';
+import { provideHttpClient } from '@angular/common/http';
+import { DetailProductComponent } from './layout/product/detail-product/detail-product.component';
+import { AddProductComponent } from './layout/product/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { DrivenFormComponent } from './layout/driven-form/driven-form/driven-for
     CardProductComponent,
     ReactiveFormComponent,
     DrivenFormComponent,
+    DetailProductComponent,
+    AddProductComponent,
 
 
 
@@ -43,7 +48,8 @@ import { DrivenFormComponent } from './layout/driven-form/driven-form/driven-for
     ReactiveFormsModule
 
   ],
-  providers: [],
+  // Remarque : On peut aussi importer le HttpClient dans import au lieu de providers mais dans les versions anciennes 
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
